@@ -1,0 +1,36 @@
+﻿@model ContactFormModel
+@{
+    ViewData["Title"] = "تواصل معي";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">تواصل معي</h2>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">@ViewBag.Message</div>
+    }
+
+    <form method="post">
+        <div class="mb-3">
+            <label>الاسم</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>البريد الإلكتروني</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>الرسالة</label>
+            <textarea asp-for="Message" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Message" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">إرسال</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
