@@ -1,24 +1,44 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+
+@{
     ViewData["Title"] = "عني";
 }
 
 <div class="container mt-5">
-    <h2 class="mb-4">من أنا؟</h2>
+    <div class="card shadow rounded-4 p-4">
+        <h2 class="mb-4 text-primary fw-bold">@Localizer["about"]</h2>
+        <p class="lead"> @Localizer["nam"] <strong>@Localizer["shoaib"]</strong> @Localizer["explain"]</p>
+        <hr />
 
-    <p>.اسمي شعيب، مهندس برمجيات بدأت رحلتي في عالم البرمجة من شغف حقيقي لبناء حلول عملية باستخدام التكنولوجيا</p>
+        <h4 class="text-secondary mt-4">@Localizer["skills"]</h4>
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+            <div class="col">
+                <div class="d-flex align-items-center bg-light border rounded-3 p-3">
+                    <span class="me-2">📌</span> <span>C# و ASP.NET Core</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex align-items-center bg-light border rounded-3 p-3">
+                    <span class="me-2">📌</span> <span>HTML, CSS</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex align-items-center bg-light border rounded-3 p-3">
+                    <span class="me-2">📌</span> <span>SQL و Entity Framework Core</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex align-items-center bg-light border rounded-3 p-3">
+                    <span class="me-2">📌</span> <span>GitHub</span>
+                </div>
+            </div>
+        </div>
 
-    <hr />
+        <hr />
 
-    <h4>المهارات التقنية</h4>
-    <ul>
-        <li>📌 C# و ASP.NET Core</li>
-        <li>📌 HTML, CSS</li>
-        <li>📌 SQL و Entity Framework Core</li>
-        <li>📌 GitHub</li>
-    </ul>
-
-    <hr />
-
-    <h4>هدفي</h4>
-    <p>.أن أصبح مطور ويب محترف، قادر على إنشاء تطبيقات حقيقية تخدم الناس وتساعدني على العمل الحر أو السفر والعمل بالخارج</p>
+        <h4 class="text-secondary mt-4">@Localizer["goal"]</h4>
+        <p>@Localizer["exp"]</p>
+    </div>
 </div>

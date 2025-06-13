@@ -1,14 +1,29 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
     ViewData["Title"] = "الصفحة الرئيسية";
 }
 
-<div class="container text-center mt-5">
-    <h1 class="display-4">مرحباً، أنا شعيب 👋</h1>
-    <p class="lead">ASP.NET CORE مهندس برمجيات أتعلم وابني مشاريع ويب احترافية بتقنية </p>
+<div class="container text-center mt-5" style="visibility: hidden;" id="main-content">
+    <h1 class="display-3 fw-bold animate__animated animate__fadeInUp">@Localizer["Welcome"]</h1>
+    <p class="lead mb-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">@Localizer["subtitle"] <br /><span class="text-primary">ASP.NET CORE</span></p>
 
-    <img src="~/images/profile.jpg" alt="صورتي" class="rounded-circle my-4" style="width: 150px; height: 150px;" />
+    <div class="mx-auto animate__animated animate__fadeInUp" style="width: 160px; height: 160px; animation-delay: 0.4s;">
+        <img src="~/images/profile.jpg" alt="صورتي" class="rounded-circle shadow-lg" style="width: 160px; height: 160px; object-fit: cover;" />
+    </div>
 
-    <p>
-        <a class="btn btn-primary btn-lg" asp-controller="Contact" asp-action="Index">تواصل معي</a>
+    <p class="mt-4 animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+        <a class="btn btn-lg btn-primary px-4 shadow-sm" asp-controller="Contact" asp-action="Index">@Localizer["ContactButton"]</a>
+
     </p>
 </div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var content = document.getElementById('main-content');
+            content.style.visibility = "visible";
+        });
+    </script>
+}

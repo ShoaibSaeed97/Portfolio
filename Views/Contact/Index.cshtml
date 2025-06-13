@@ -1,34 +1,46 @@
-﻿@model ContactFormModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model ContactFormModel
 @{
     ViewData["Title"] = "تواصل معي";
 }
 
 <div class="container mt-5">
-    <h2 class="mb-4">تواصل معي</h2>
+    <div class="card shadow-lg rounded-4 p-4">
+        <h2 class="mb-4 text-primary fw-bold">📬 @Localizer["contact"]</h2>
 
-    @if (ViewBag.Message != null)
-    {
-        <div class="alert alert-success">@ViewBag.Message</div>
-    }
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @ViewBag.Message
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
 
-    <form method="post">
-        <div class="mb-3">
-            <label>الاسم</label>
-            <input asp-for="Name" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label>البريد الإلكتروني</label>
-            <input asp-for="Email" class="form-control" />
-            <span asp-validation-for="Email" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label>الرسالة</label>
-            <textarea asp-for="Message" class="form-control" rows="4"></textarea>
-            <span asp-validation-for="Message" class="text-danger"></span>
-        </div>
-        <button type="submit" class="btn btn-primary">إرسال</button>
-    </form>
+        <form method="post" novalidate>
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">@Localizer["yourname"]</label>
+                <input asp-for="Name" class="form-control rounded-3 shadow-sm" placeholder="@Localizer["name"]" />
+                <span asp-validation-for="Name" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"> @Localizer["youremail"]</label>
+                <input asp-for="Email" type="email" class="form-control rounded-3 shadow-sm" placeholder="example@email.com" />
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Message" class="form-label"> @Localizer["message"]</label>
+                <textarea asp-for="Message" class="form-control rounded-3 shadow-sm" rows="4" placeholder=" @Localizer["themes"]"></textarea>
+                <span asp-validation-for="Message" class="text-danger small"></span>
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary px-4">إرسال</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 @section Scripts {

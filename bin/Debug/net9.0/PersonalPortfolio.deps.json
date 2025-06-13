@@ -9,6 +9,14 @@
       "PersonalPortfolio/1.0.0": {
         "runtime": {
           "PersonalPortfolio.dll": {}
+        },
+        "resources": {
+          "ar/PersonalPortfolio.resources.dll": {
+            "locale": "ar"
+          },
+          "en/PersonalPortfolio.resources.dll": {
+            "locale": "en"
+          }
         }
       }
     }

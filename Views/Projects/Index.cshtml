@@ -1,33 +1,29 @@
-﻿@{
-    ViewData["Title"] = "المشاريع";
-}
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
-<div class="container mt-5">
-    <h2 class="mb-4">مشاريعي</h2>
-
-    <p>بعض المشاريع اللي اشتغلت عليها أو أتعلم من خلالها حالياً:</p>
-
-    <div class="row">
-        <div class="col-md-4 mb-4">
+<section id="projects" class="container py-5">
+    <h2 class="mb-4 text-center fw-bold">@Localizer["projects"]</h2>
+    <div class="row g-4">
+        <!-- مشروع To-Do List -->
+        <div class="col-md-6">
             <div class="card h-100 shadow-sm">
                 <div class="card-body">
-                    <h5 class="card-title">موقع تعريفي شخصي</h5>
-                    <p class="card-text">موقع مبني باستخدام ASP.NET Core MVC لعرض السيرة الذاتية والتواصل، مع صفحات متعددة وتصميم بسيط.</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm disabled">رابط المشروع</a>
+                    <h5 class="card-title">@Localizer["todo"]</h5>
+                    <p class="card-text">@Localizer["ex"]</p>
+                    <a href="https://github.com/ShoaibSaeed97/ToDoListApp" target="_blank" class="btn btn-outline-primary"> @Localizer["url1"]</a>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-4 mb-4">
+        <!-- مشروع الموقع الشخصي -->
+        <div class="col-md-6">
             <div class="card h-100 shadow-sm">
                 <div class="card-body">
-                    <h5 class="card-title">To do list Project</h5>
-                    <p class="card-text">تطبيق ويب بسيط لإدارة المهام</p>
-                    <a href="https://github.com/ShoaibSaeed97/ToDoListApp" target="_blank" class="btn btn-outline-primary btn-sm ">رابط المشروع</a>
+                    <h5 class="card-title">@Localizer["Portfolio"]</h5>
+                    <p class="card-text">@Localizer["ex1"]</p>
+                    <a href="https://github.com/ShoaibSaeed97/Portfolio" target="_blank" class="btn btn-outline-primary">@Localizer["url1"] </a>
                 </div>
             </div>
         </div>
-
-        
     </div>
-</div>
+</section>

@@ -1,58 +1,40 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
     ViewData["Title"] = "السيرة الذاتية";
 }
 
 
 
 <div class="container mt-5">
-    <h2 class="mb-4">السيرة الذاتية</h2>
+    <h2 class="mb-4 fw-bold">@Localizer["resume"]</h2>
 
-    <style>
-        .education-section {
-            max-width: 600px;
-            margin: 20px auto 40px auto;
-            background: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-        }
-
-        .education-item {
-            margin-bottom: 20px;
-            border-left: 4px solid #3b82f6;
-            padding-left: 15px;
-        }
-
-        .education-degree {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #1e40af;
-        }
-
-        .education-institution {
-            font-weight: 600;
-            color: #374151;
-        }
-
-        .education-duration {
-            font-style: italic;
-            color: #6b7280;
-        }
-    </style>
+   
 
     <section class="education-section">
-        <h2>التعليم</h2>
+        <h2 class="fw-bold">@Localizer["EducationHeader"]</h2>
 
         @foreach (var edu in new[] {
-                new { Institution = "جامعة حمص", Degree = "بكالوريوس هندسة معلوماتية - قسم هندسة البرمجيات", Duration = "2017 - 2022", Notes = "" },
-                new { Institution = "دورة تطوير ويب", Degree = "ASP.NET core tutorial for beginners", Duration = "2022", Notes = "Youtube" }
+                new {
+                Degree = Localizer["Edu1_Degree"].Value,
+                Institution = Localizer["Edu1_Institution"].Value,
+                Duration = Localizer["Edu1_Duration"].Value,
+                Notes = Localizer["Edu1_Notes"].Value
+                },
+                new {
+                Degree = Localizer["Edu2_Degree"].Value,
+                Institution = Localizer["Edu2_Institution"].Value,
+                Duration = Localizer["Edu2_Duration"].Value,
+                Notes = Localizer["Edu2_Notes"].Value
+                }
                 })
         {
             <div class="education-item">
                 <div class="education-degree">@edu.Degree</div>
                 <div class="education-institution">@edu.Institution</div>
                 <div class="education-duration">@edu.Duration</div>
-                @if (!string.IsNullOrEmpty(edu.Notes))
+                @if (!string.IsNullOrWhiteSpace(edu.Notes))
                 {
                     <div class="education-notes">@edu.Notes</div>
                 }
@@ -60,63 +42,60 @@
         }
     </section>
 
-    @Html.Partial("_SkillsPartial")
 
-    <style>
-        .experience-section {
-            max-width: 600px;
-            margin: 20px auto 40px auto;
-            background: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-        }
 
-        .experience-item {
-            margin-bottom: 20px;
-            border-left: 4px solid #3b82f6;
-            padding-left: 15px;
+    <section class="skill-container">
+        <h2 class="fw-bold">@Localizer["skill"]</h2>
+        @foreach (var skill in new[] {
+                new { Name = "C#", Level = 85 },
+                new { Name = "ASP.NET Core", Level = 85 },
+                new { Name = "Entity Framework", Level = 80 },
+                new { Name = "SQL", Level = 75 },
+                new { Name = "HTML", Level = 90 },
+                new { Name = "CSS", Level = 85 },
+                new { Name = "GitHub", Level = 75 }
+                })
+        {
+            <div class="skill">
+                <div class="skill-header">
+                    <span>@skill.Name</span>
+                    <span>@skill.Level%</span>
+                </div>
+                <div class="progress-bg">
+                    <div class="progress-bar" style="width:@skill.Level%"></div>
+                </div>
+            </div>
         }
-
-        .experience-position {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #1e40af;
-        }
-
-        .experience-company {
-            font-weight: 600;
-            color: #374151;
-        }
-
-        .experience-duration {
-            font-style: italic;
-            color: #6b7280;
-            margin-bottom: 8px;
-        }
-
-        .experience-description {
-            color: #4b5563;
-            line-height: 1.5;
-        }
-    </style>
+    </section>
+    
 
     <section class="experience-section">
-        <h2>الخبرة العملية</h2>
+        <h2 class="fw-bold">@Localizer["ExperienceHeader"]</h2>
 
         @foreach (var exp in new[] {
-                new { Company = "شركة طروادة للنقل والشحن", Position = "قسم المتابعة التقنية", Duration = "ديسمبر 2022 - ديسمبر 2024", Description = "متابعة ومراقبة العمليات التقنية وضمان سير العمل بشكل سلس وفعال." },
-                new { Company = "شركة الكهرباء في لبنان", Position = "فني صيانة", Duration = "منذ مايو 2025 - الآن", Description = "العمل على دعم وصيانة أنظمة الكهربا." }
+                new {
+                Title = Localizer["Project1_Title"],
+                Position = Localizer["Project1_Position"],
+                Duration = Localizer["Project1_Duration"],
+                Description = Localizer["Project1_Description"]
+                },
+                new {
+                Title = Localizer["Project2_Title"],
+                Position = Localizer["Project2_Position"],
+                Duration = Localizer["Project2_Duration"],
+                Description = Localizer["Project2_Description"]
+                }
                 })
         {
             <div class="experience-item">
                 <div class="experience-position">@exp.Position</div>
-                <div class="experience-company">@exp.Company</div>
+                <div class="experience-company">@exp.Title</div>
                 <div class="experience-duration">@exp.Duration</div>
                 <div class="experience-description">@exp.Description</div>
             </div>
         }
     </section>
+
 
 
 

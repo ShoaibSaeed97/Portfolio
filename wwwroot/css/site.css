@@ -18,7 +18,9 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: 'Tajawal', sans-serif;
+    padding-top: 70px;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -28,4 +30,117 @@ body {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+#projects .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    #projects .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+
+.experience-section {
+    max-width: 600px;
+    margin: 20px auto 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.experience-item {
+    margin-bottom: 20px;
+    border-left: 4px solid #3b82f6;
+    padding-left: 15px;
+}
+
+.experience-position {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #1e40af;
+}
+
+.experience-company {
+    font-weight: 600;
+    color: #374151;
+}
+
+.experience-duration {
+    font-style: italic;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.experience-description {
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.education-section {
+    max-width: 600px;
+    margin: 20px auto 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.education-item {
+    margin-bottom: 20px;
+    border-left: 4px solid #3b82f6;
+    padding-left: 15px;
+}
+
+.education-degree {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #1e40af;
+}
+
+.education-institution {
+    font-weight: 600;
+    color: #374151;
+}
+
+.education-duration {
+    font-style: italic;
+    color: #6b7280;
+}
+
+
+.skill-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+.progress-bg {
+    background: #eee;
+    border-radius: 8px;
+    height: 16px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: #3b82f6; /* √“—ﬁ Tailwind */
+    height: 100%;
+    border-radius: 8px;
 }
