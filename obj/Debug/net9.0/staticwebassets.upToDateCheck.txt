@@ -1,5 +1,6 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\Images\profile.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -61,7 +62,6 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\Images\profile.jpg
 C:\Users\SHIRO\source\repos\PersonalPortfolio\PersonalPortfolio\wwwroot\lib\jquery\LICENSE.txt
 C:\Users\SHIRO\source\repos\PersonalPortfolio\PersonalPortfolio\wwwroot\lib\jquery\dist\jquery.slim.min.map
 C:\Users\SHIRO\source\repos\PersonalPortfolio\PersonalPortfolio\wwwroot\lib\jquery\dist\jquery.slim.min.js
