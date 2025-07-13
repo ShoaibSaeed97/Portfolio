@@ -13,4 +13,5 @@ WORKDIR /app
 COPY --from=build /app/out .
 
 # تشغيل التطبيق
+EXPOSE 5000
 ENTRYPOINT ["dotnet", "PersonalPortfolio.dll"]
