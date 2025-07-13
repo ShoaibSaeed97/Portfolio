@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
 using System.Globalization;
+
 var builder = WebApplication.CreateBuilder(args);
 
+// ÅÖÇİÉ ÏÚã ÇáÊÑÌãÉ æÇááÛÇÊ
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 builder.Services.Configure<RequestLocalizationOptions>(options =>
@@ -18,16 +20,20 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.SupportedUICultures = supportedCultures;
 });
 
+// ÅÖÇİÉ ÕİÍÇÊ Razor ãÚ ÏÚã ÇáÊÑÌãÉ İí ÇáæÇÌåÇÊ
 builder.Services.AddRazorPages()
     .AddViewLocalization();
 
-// Add services to the container.
+// ÅÖÇİÉ ÎÏãÇÊ MVC
 builder.Services.AddControllersWithViews();
-builder.WebHost.UseUrls($"http://*:{Environment.GetEnvironmentVariable("PORT") ?? "5000"}");
+
+// ÊÚííä ÚäæÇä URL ááÇÓÊãÇÚ ãÚ ŞÑÇÁÉ ãÊÛíÑ ÇáÈíÆÉ PORT (Ãæ ÇáãäİĞ 5000 ßÇİÊÑÇÖí)
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
-
+// Middleware áÊÚÑíİ ÇááÛÉ ÈäÇÁğ Úáì ÇÓÊÚáÇã URL æÍİÙå İí ÇáßæßíÒ
 app.Use(async (context, next) =>
 {
     var cultureQuery = context.Request.Query["culture"];
@@ -44,15 +50,14 @@ app.Use(async (context, next) =>
     await next();
 });
 
-// Use localization
+// ÊİÚíá ÅÚÏÇÏÇÊ ÇáÊÑÌãÉ æÇááÛÇÊ
 var locOptions = app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>();
 app.UseRequestLocalization(locOptions.Value);
 
-// Configure the HTTP request pipeline.
+// Êßæíä ãÓÇÑ ÇáØáÈÇÊ æÇáÊÚÇãá ãÚ ÇáÃÎØÇÁ
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -61,12 +66,12 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// ÅĞÇ áÏíß MapStaticAssets ßÇãÊÏÇÏ ÎÇÕ¡ ÊÃßÏ ãä æÌæÏå¡ Ãæ ÇÍĞİå Åä áã íßä ãÓÊÎÏãğÇ
 app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
-
 
 app.Run();
