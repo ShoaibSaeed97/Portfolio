@@ -125,6 +125,9 @@
     <value>موقع شخصي يعرض معلومات عني، مهاراتي، سيرتي الذاتية،وطريقة تواصل معي، ومشاريعي.
   بتصميم بسيط وسلس</value>
   </data>
+  <data name="ex2" xml:space="preserve">
+    <value>تطبيق ويب لإدارة العملاء والفواتير وعناصر الفواتير.</value>
+  </data>
   <data name="Portfolio" xml:space="preserve">
     <value>الموقع الشخصي</value>
   </data>
@@ -133,6 +136,9 @@
   </data>
   <data name="todo" xml:space="preserve">
     <value>تطبيق إدارة المهام</value>
+  </data>
+  <data name="universalServiceManager" xml:space="preserve">
+    <value>مدير الخدمة الشاملة</value>
   </data>
   <data name="url1" xml:space="preserve">
     <value>GitHub رابط</value>

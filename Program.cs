@@ -23,6 +23,7 @@ builder.Services.AddRazorPages()
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.WebHost.UseUrls($"http://*:{Environment.GetEnvironmentVariable("PORT") ?? "5000"}");
 
 var app = builder.Build();
 

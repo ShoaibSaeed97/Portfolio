@@ -123,6 +123,9 @@
   <data name="ex1" xml:space="preserve">
     <value>A personal website displaying information about me, my skills, my resume, my projects, and how to contact me. With a simple and streamlined design.</value>
   </data>
+  <data name="ex2" xml:space="preserve">
+    <value>Web application for managing customers, invoices, and invoice items.</value>
+  </data>
   <data name="Portfolio" xml:space="preserve">
     <value>Personal Portfolio</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="todo" xml:space="preserve">
     <value>To-Do List App</value>
+  </data>
+  <data name="universalServiceManager" xml:space="preserve">
+    <value>Universal Service Manager</value>
   </data>
   <data name="url1" xml:space="preserve">
     <value>GitHub link</value>

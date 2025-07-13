@@ -1,0 +1,9 @@
+C:\Users\SHIRO\source\repos\PersonalPortfolio\PersonalPortfolio\obj\Release\net9.0\PubTmp\Out\PersonalPortfolio.exe
+C:\Users\SHIRO\source\repos\PersonalPortfolio\PersonalPortfolio\obj\Release\net9.0\PubTmp\Out\appsettings.Development.json
+C:\Users\SHIRO\source\repos\PersonalPortfolio\PersonalPortfolio\obj\Release\net9.0\PubTmp\Out\appsettings.json
+C:\Users\SHIRO\source\repos\PersonalPortfolio\PersonalPortfolio\obj\Release\net9.0\PubTmp\Out\PersonalPortfolio.dll
+C:\Users\SHIRO\source\repos\PersonalPortfolio\PersonalPortfolio\obj\Release\net9.0\PubTmp\Out\PersonalPortfolio.deps.json
+C:\Users\SHIRO\source\repos\PersonalPortfolio\PersonalPortfolio\obj\Release\net9.0\PubTmp\Out\PersonalPortfolio.runtimeconfig.json
+C:\Users\SHIRO\source\repos\PersonalPortfolio\PersonalPortfolio\obj\Release\net9.0\PubTmp\Out\PersonalPortfolio.pdb
+C:\Users\SHIRO\source\repos\PersonalPortfolio\PersonalPortfolio\obj\Release\net9.0\PubTmp\Out\ar\PersonalPortfolio.resources.dll
+C:\Users\SHIRO\source\repos\PersonalPortfolio\PersonalPortfolio\obj\Release\net9.0\PubTmp\Out\en\PersonalPortfolio.resources.dll
